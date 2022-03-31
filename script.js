@@ -1,3 +1,5 @@
+//TEMPO 29:26
+
 //Initial Data
 let square = {
   a1: '',
@@ -19,8 +21,19 @@ reset()
 
 //Events
 document.querySelector('.reset').addEventListener('click', reset)
+document.querySelectorAll('.item').forEach(item => {
+  item.addEventListener('click', itemClick)
+})
 
 //Functions
+function itemClick(event) {
+  let item = event.target.getAttribute('data-item')
+  if (square[item] === '') {
+    square[item] = player
+    renderSquare()
+  }
+}
+
 function reset() {
   warning = ''
 
@@ -45,6 +58,6 @@ function renderSquare() {
 }
 
 function renderInfo() {
-  document, (querySelector('.vez').innerHTML = player)
-  document, (querySelector('.resultado').innerHTML = warning)
+  document.querySelector('.vez').innerHTML = player
+  document.querySelector('.resultado').innerHTML = warning
 }
