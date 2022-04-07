@@ -31,6 +31,7 @@ function itemClick(event) {
   if (square[item] === '') {
     square[item] = player
     renderSquare()
+    togglePlayer()
   }
 }
 
@@ -60,4 +61,12 @@ function renderSquare() {
 function renderInfo() {
   document.querySelector('.vez').innerHTML = player
   document.querySelector('.resultado').innerHTML = warning
+}
+
+function togglePlayer() {
+  if (player === 'x') {
+    player = 'o'
+  } else {
+    player = 'x'
+  }
 }
